@@ -21,6 +21,14 @@ describe('restrict-prop-types', () => {
     assert.equal(restrict(NoScript).CONSTANT, NoScript.CONSTANT, 'restrict should hoist constants');
   });
 
+  it('hoists propTypes', () => {
+    const NoScript = () => <noscript />;
+    NoScript.propTypes = {
+      a: PropTypes.string
+    };
+    assert.equal(restrict(NoScript).propTypes.a, NoScript.propTypes.a, 'restrict should hoist constants');
+  });
+
   it('tests the happy path', () => {
     class NoScript extends Component {
       render() {

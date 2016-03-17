@@ -10,13 +10,14 @@ import {
 
 export default hoistStatics(C => {
   const Restrict = props => <C {...props} />;
-
+  const propTypes = C.propTypes || {};
   return compose(
     setDisplayName(wrapDisplayName(getDisplayName(C), 'restrict')),
     setPropTypes({
+      ...propTypes,
       __restrict__: (props, propName, componentName) => {
         const extras = Object.keys(props).reduce((memo, key) => {
-          if (!(C.propTypes || {}).hasOwnProperty(key)) {
+          if (!propTypes.hasOwnProperty(key)) {
             memo.push(key);
           }
           return memo;
