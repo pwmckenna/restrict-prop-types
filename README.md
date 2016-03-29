@@ -17,7 +17,7 @@ class DumbComponent extends Component {
 export default restrict(DumbComponent);
 ```
 
-Alternatively, just put all your dumb components in the same directory, and have a .babelrc file that applies `restrict-prop-types` to all the component.
+Alternatively, just put all your dumb components in the same directory, and have a .babelrc file that uses `react-transform-hoc` to apply `restrict-prop-types` to all the components.
 
 > .babelrc
 ```json
