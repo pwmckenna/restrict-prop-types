@@ -25,7 +25,7 @@ render(<DumbComponent a={1} b={2} c={3}/>)
 
 Alternatively, just put all your dumb components in the same directory, and have a .babelrc file that uses `react-transform-hoc` to apply `restrict-prop-types` to all the components.
 
-> .babelrc
+> components/.babelrc
 ```json
 {
   "presets": [
