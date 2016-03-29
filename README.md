@@ -21,7 +21,7 @@ render(<DumbComponent a={1} b={2} c={3}/>)
 
 > 'Warning: Failed propType: Invalid additional prop(s): ['a', 'c'] supplied to restrict(Dumb).'
 
-#### Usage as a transform
+### Usage as a transform
 
 Alternatively, just put all your dumb components in the same directory, and have a .babelrc file that uses `react-transform-hoc` to apply `restrict-prop-types` to all the components.
 
