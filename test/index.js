@@ -52,7 +52,7 @@ describe('restrict-prop-types', () => {
       mount(<Container a="b" />);
     } catch (err) {
       caught = true;
-      assert.equal(err, 'Warning: Failed propType: Invalid additional prop(s): [\'a\'] supplied to restrict(NoScript).');
+      assert.equal(err.message, 'Warning: Failed propType: Invalid additional prop(s): [\'a\'] supplied to restrict(NoScript).');
     }
     assert(caught, 'expect an addition prop error to be thrown');
   });
@@ -72,7 +72,7 @@ describe('restrict-prop-types', () => {
       mount(<Container a="a" b="b" c="c" />);
     } catch (err) {
       caught = true;
-      assert.equal(err, 'Warning: Failed propType: Invalid additional prop(s): [\'b\', \'c\'] supplied to restrict(NoScript).');
+      assert.equal(err.message, 'Warning: Failed propType: Invalid additional prop(s): [\'b\', \'c\'] supplied to restrict(NoScript).');
     }
     assert(caught, 'expect an addition prop error to be thrown');
   })
